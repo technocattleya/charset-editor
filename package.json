@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/technocattleya/charset-editor/issues"
   },
-  "homepage": "https://github.com/technocattleya/charset-editor#readme",
+  "homepage": "https://technocattleya.github.io/charset-editor/",
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "cpx": "^1.5.0",
