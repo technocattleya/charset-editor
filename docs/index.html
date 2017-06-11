@@ -21,6 +21,15 @@
       <h1>Character Set Editor</h1>
     </div>
 
+    <div class="control">
+      <div class="radio">
+        <label class="radio_label" v-for="item of cnvTypes">
+          <input type="radio" name="cnv-type" :value="item.value" v-model="type">
+          <span>{{ item.label }}</span>
+	      </label>
+      </div>
+    </div>
+
     <div class="editor">
       <textarea class="editor_textarea" :value="input" :placeholder="placeholder" @input="update"></textarea>
       <textarea class="editor_textarea" :value="output"></textarea>

@@ -4,12 +4,42 @@
 var vm = new Vue({
   el: '#app',
   data: {
+    type: "16",
+    cnvTypes: [
+      {
+        label: "2進数表記",
+        value: "2"
+      },
+      {
+        label: "8進数表記",
+        value: "8"
+      },
+      {
+        label: "16進数表記",
+        value: "16"
+      },
+      {
+        label: "URLエンコード",
+        value: "url"
+      }
+    ],
     input: "",
     placeholder: "ここに変換したいテキストを入力"
   },
   computed: {
     output: function () {
-        return this.stringToCodeString();
+      return this.stringToCodeString();
+    },
+    digit: function () {
+      // use == to allow number type
+      if (this.type == "16") {
+        return 2;
+      } else if (this.type == "8") {
+        return 3;
+      } else if (this.type == "2") {
+        return 8;
+      }
+      return NaN;
     }
   },
   methods: {
@@ -19,8 +49,8 @@ var vm = new Vue({
     stringToCodeString: function () {
       var utf8str, codeDecimal, codeString;
       var string = this.input;
-      var type = "16";
-      var digit = 2;
+      var type = this.type;
+      var digit = this.digit;
 
       utf8str = Encoding.convert(string, 'UTF8');
       codeDecimal = Encoding.stringToCode(utf8str);

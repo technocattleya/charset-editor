@@ -24,6 +24,15 @@ className : blockName_elementName_modifierKey-modifierValue
     padding: 0.5rem 0.67rem;
 }
 
+.control {
+    padding: 0 .6rem;
+}
+
+.radio {
+    display: flex;
+    flex-flow: row wrap;
+}
+
 .editor {
     display: flex;
     flex-direction: column;
