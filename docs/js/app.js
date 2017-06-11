@@ -83,7 +83,30 @@ var vm = new Vue({
       return codeString;
     },
     codeStringToString: function () {
-      return this.input; // TODO
+      var code = [];
+      var from, to, char, string;
+      var codeString = this.input;
+      var len = codeString && codeString.length;
+      var type = this.type;
+      var digit = this.digit;
+
+      // convert code string to decimal code array
+      if (!isNaN(digit)) {
+        len = len / digit;
+        for (var i = 0; i < len; i++) {
+          from = i * digit;
+          to = from + digit;
+          char = codeString.slice(from, to);
+          code[i] = parseInt(char, type);
+        }
+      } else {
+        code = Encoding.urlDecode(codeString);
+      }
+
+      code = Encoding.convert(code, "UNICODE");
+      string = Encoding.codeToString(code);
+
+      return string;
     }
   }
 });
