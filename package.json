@@ -1,0 +1,45 @@
+{
+  "name": "charset-editor",
+  "version": "1.0.0",
+  "description": "The single-page application to edit text while converting it to character set.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "prestart": "npm run rebuild",
+    "start": "npm run watch",
+    "clean": "rimraf ./docs",
+    "release": "npm-run-all clean build:copy release:*",
+    "rebuild": "npm run clean && npm run build",
+    "build": "npm-run-all build:*",
+    "watch": "npm-run-all --parallel watch:* browser:sync",
+    "build:copy": "cpx --include-empty-dirs ./src/raw/**/ ./docs",
+    "watch:copy": "npm run build:copy -- --watch",
+    "release:scss": "node-sass --output-style compressed ./src/scss --output ./docs/css",
+    "build:scss": "node-sass --source-map true --output-style expanded ./src/scss --output ./docs/css",
+    "watch:scss": "npm run build:scss -- --watch",
+    "browser:sync": "browser-sync start --server ./docs --files ./docs/**/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technocattleya/charset-editor.git"
+  },
+  "keywords": [
+    "vue.js"
+  ],
+  "author": "technocattleya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/technocattleya/charset-editor/issues"
+  },
+  "homepage": "https://github.com/technocattleya/charset-editor#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "cpx": "^1.5.0",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1"
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--<script type="text/javascript" src="https://unpkg.com/vue"></script>-->
+  <script type="text/javascript" src="js/lib/vue.min.js"></script>
+
+  <title>Character Set Editor</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="container">
+      <h1>Character Set Editor</h1>
+    </div>
+
+    <div class="editor">
+      <textarea class="editor_textarea" :value="input" :placeholder="placeholder" @input="update"></textarea>
+      <textarea class="editor_textarea" :value="output"></textarea>
+    </div>
+
+    <footer class="footer">
+      <p id="copyright"><small>Copyright &#169; 2017- <a href="https://technocattleya.com/">Techno Cattleya</a>. All Rights Reserved.</small></p>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="js/lib/lodash.min.js"></script>
+  <script type="text/javascript" src="js/lib/encoding.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>

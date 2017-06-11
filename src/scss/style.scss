@@ -1,0 +1,49 @@
+html,
+body,
+p {
+    margin: 0;
+}
+
+body,
+html,
+#app {
+    height: 100%;
+}
+
+
+/* -------------------------------- 
+
+Main components
+
+Do not use tag selectors on the top level below.
+className : blockName_elementName_modifierKey-modifierValue
+
+-------------------------------- */
+
+.container {
+    padding: 0.5rem 0.67rem;
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85%;
+    padding: .5rem .6rem;
+    &>* {
+        height: 50%;
+    }
+}
+
+.editor_textarea {
+    resize: none;
+    &:focus::placeholder {
+        opacity: 0;
+    }
+}
+
+.footer {
+    margin: 0.5rem auto;
+    padding: 0.5rem 0.67rem;
+    text-align: center;
+}

@@ -1,0 +1,23 @@
+// Build Task Configuration
+// Use IntelliSense (Ctrl+Space) to see the available settings.
+// For the discription of the option, hover it. 
+//
+// See https://go.microsoft.com/fwlink/?LinkId=733558
+// for the documentation about the tasks.json format
+{
+  // This depends on the npm-scripts in the package.json.
+  "version": "0.1.0",
+  "command": "npm",
+  "isShellCommand": true,
+  //"args": ["run"],
+  "tasks": [
+    {
+      "taskName": "start",
+      //"taskName": "rebuild",
+      //"taskName": "build",
+      "isBuildCommand": true,
+      "showOutput": "never",
+      "isBackground": true
+    }
+  ]
+}

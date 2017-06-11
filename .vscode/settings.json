@@ -1,0 +1,13 @@
+// Use IntelliSense (Ctrl+Space) to see the available settings.
+// For the discription of the option, hover it. 
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "emmet.syntaxProfiles": {
+    "javascript": "html"
+  },
+  // for loading emmet snippets.json
+  "emmet.extensionsPath": ".vscode",
+  "eslint.enable": true,
+  "javascript.validate.enable": true
+}
