@@ -24,11 +24,16 @@ var vm = new Vue({
       }
     ],
     input: "",
+    mode: "STRING_TO_CODE",
     placeholder: "ここに変換したいテキストを入力"
   },
   computed: {
     output: function () {
-      return this.stringToCodeString();
+      if (this.mode === "STRING_TO_CODE") {
+        return this.stringToCodeString();
+      } else {
+        return this.codeStringToString();
+      }
     },
     digit: function () {
       // use == to allow number type
@@ -46,6 +51,16 @@ var vm = new Vue({
     update: _.debounce(function (e) {
       this.input = e.target.value
     }, 300),
+    toggleMode: function () {
+      this.input = this.output;
+      if (this.mode === "STRING_TO_CODE") {
+        this.mode = "CODE_TO_STRING";
+        this.placeholder = "ここに変換したいUTF-8コードを入力";
+      } else {
+        this.mode = "STRING_TO_CODE";
+        this.placeholder = "ここに変換したいテキストを入力";
+      }
+    },
     stringToCodeString: function () {
       var utf8str, codeDecimal, codeString;
       var string = this.input;
@@ -66,6 +81,9 @@ var vm = new Vue({
       }
 
       return codeString;
+    },
+    codeStringToString: function () {
+      return this.input; // TODO
     }
   }
 });
