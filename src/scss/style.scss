@@ -1,3 +1,6 @@
+// colors, fonts etc...
+@import 'partials/variables';
+
 /* -------------------------------- 
 
 Primary style
@@ -25,7 +28,12 @@ html,
 }
 
 body {
+    color: $color-5;
     font-size: 100%;
+    font-family: $primary-font;
+    background-color: $color-4;
+    background-image: radial-gradient(51% 96%, #e7e9e4 10%, #d4d6d1 96%), repeating-linear-gradient(-45deg, $color-4, $color-4 2px, transparent 2px, transparent 10px), repeating-linear-gradient( 45deg, $color-4, $color-4 2px, transparent 2px, transparent 10px);
+    background-blend-mode: soft-light;
 }
 
 
@@ -44,6 +52,7 @@ className : blockName_elementName_modifierKey-modifierValue
         font-size: 2em;
         font-weight: bolder;
         padding: 1rem 0rem;
+        text-shadow: 4px 5px 3px rgba($color-5, .6);
     }
 }
 
@@ -60,6 +69,58 @@ className : blockName_elementName_modifierKey-modifierValue
     flex-flow: row wrap;
 }
 
+.radio_label {
+    display: flex;
+    align-items: center;
+    input[type=radio] {
+        position: absolute;
+        opacity: 0;
+        &+span {
+            display: flex;
+            width: 10em;
+            margin-right: 1em;
+            padding: .5em;
+            color: $color-5;
+            font-size: 14px;
+            font-weight: bolder;
+            background-color: rgba($color-4, .6);
+            &::before {
+                content: "";
+                margin-right: .5em;
+                width: 1.1em;
+                height: 1.1em;
+                background-color: $color-5;
+            }
+        }
+        &+span:hover,
+        &:checked+span,
+        &:active+span {
+            color: $color-1;
+            background-color: rgba($color-5, .9);
+            &::before {
+                background-color: $color-1;
+            }
+        }
+    }
+}
+
+.btn {
+    color: $color-5;
+    font-size: 16px;
+    font-weight: bolder;
+    padding: .3em 1.2em;
+    border: none;
+    background-color: $color-1;
+    box-shadow: 4px 4px 5px rgba($color-5, .5);
+    &:hover {
+        color: $color-1;
+        background-color: $color-5;
+    }
+    &:active {
+        box-shadow: none;
+    }
+}
+
 .editor {
     display: flex;
     flex-direction: column;
@@ -67,11 +128,19 @@ className : blockName_elementName_modifierKey-modifierValue
     height: 85%;
     padding: .5rem .6rem;
     &>* {
-        height: 50%;
+        height: calc(50% - .3rem);
     }
 }
 
 .editor_textarea {
+    font-size: 14px;
+    font-family: $editor-font;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #cccccc;
+    background: rgba($color-1, .6);
+    box-shadow: 4px 4px 5px rgba($color-5, .5);
     resize: none;
     &:focus::placeholder {
         opacity: 0;
@@ -79,7 +148,11 @@ className : blockName_elementName_modifierKey-modifierValue
 }
 
 .footer {
+    color: $color-5;
     margin: 0.5rem auto;
     padding: 0.5rem 0.67rem;
     text-align: center;
+    a {
+        color: $color-5;
+    }
 }
