@@ -5,7 +5,7 @@ The single-page application to edit text while converting it to character set.
 
 **DEMO:**
 
-coming soon
+ [GitHub pages](https://technocattleya.github.io/charset-editor/)
 
 ## Features
 
