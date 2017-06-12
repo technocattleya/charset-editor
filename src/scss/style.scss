@@ -1,13 +1,31 @@
-html,
-body,
-p {
-    margin: 0;
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body,
 html,
 #app {
+    /* important */
     height: 100%;
+}
+
+body {
+    font-size: 100%;
 }
 
 
@@ -22,6 +40,11 @@ className : blockName_elementName_modifierKey-modifierValue
 
 .container {
     padding: 0.5rem 0.67rem;
+    h1 {
+        font-size: 2em;
+        font-weight: bolder;
+        padding: 1rem 0rem;
+    }
 }
 
 .control {
@@ -29,6 +52,7 @@ className : blockName_elementName_modifierKey-modifierValue
     justify-content: space-between;
     align-items: flex-end;
     padding: 0 .6rem;
+    margin-top: 1rem;
 }
 
 .radio {
