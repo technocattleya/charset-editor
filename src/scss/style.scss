@@ -1,5 +1,7 @@
 // colors, fonts etc...
 @import 'partials/variables';
+// media queries
+@import 'partials/layout';
 
 /* -------------------------------- 
 
@@ -106,6 +108,9 @@ className : blockName_elementName_modifierKey-modifierValue
                 background-color: $color-1;
             }
         }
+        @include MQ(M) {
+            border: none;
+        }
     }
     input[type=radio]:checked+span,
     input[type=radio]:active+span {
@@ -120,6 +125,9 @@ className : blockName_elementName_modifierKey-modifierValue
         &:hover {
             /* keep checked style */
             background-position: 0% 0%;
+        }
+        @include MQ(M) {
+            box-shadow: 0px 8px rgba($color-5, .9);
         }
     }
 }
@@ -149,6 +157,13 @@ className : blockName_elementName_modifierKey-modifierValue
     padding: .5rem .6rem;
     &>* {
         height: calc(50% - .3rem);
+    }
+    @include MQ(L) {
+        flex-direction: row;
+        &>* {
+            width: calc(50% - .3rem);
+            height: 100%;
+        }
     }
 }
 
